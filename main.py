@@ -16,6 +16,6 @@ def login(name=None):
     return render_template('index.html',name=name)
 
 
-host='127.0.0.1'
-port=8080
+host='0.0.0.0'
+port=5000
 app.run(host,port,debug=True)
