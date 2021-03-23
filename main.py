@@ -4,9 +4,8 @@ app=Flask(__name__)
 
 @app.route('/')
 @app.route('/<name>')
-def index(name='world'):
-    if name is not None:
-        return render_template('base.html',name='sdfghjkl')
+def index(name=None):
+    return render_template('index.html') #Jinja - шаблонизированный язык https://pythonru.com/uroki/7-osnovy-shablonizatora-jinja
 
 host='127.0.0.1'
 port=8080
