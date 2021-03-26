@@ -1,7 +1,7 @@
 import os
 from data import db_session
 from flask import Flask, render_template, request
-
+from data.users import User
 app = Flask(__name__)
 
 from flask import Flask, render_template
@@ -23,6 +23,13 @@ def singin():
 
 @app.route('/singup')
 def singup():
+    user = User()
+    user.name = "Пользователь 1"
+    user.about = "биография пользователя 1"
+    user.email = "email@email.ru"
+    db_sess = db_session.create_session()
+    db_sess.add(user)
+    db_sess.commit()
     return render_template('singup.html')
 
 
